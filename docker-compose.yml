@@ -1,9 +1,16 @@
+<<<<<<< HEAD:docker-compose.yml
 services:
   vprodb:
     build: 
       context: Docker-files/db
     image: akshayasp/vprofiledb
     container_name: vprodb
+=======
+version: '3.8'
+services:
+  vprodb:
+    image: vprocontainers/vprofiledb
+>>>>>>> 0bae73ccef699cb1e4c1fa705275d40fdc768c02:compose/docker-compose.yml
     ports:
       - "3306:3306"
     volumes:
@@ -22,20 +29,28 @@ services:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
   vproapp:
+<<<<<<< HEAD:docker-compose.yml
     build:
       context: Docker-files/app
     image: akshayasp/vprofileapp
     container_name: vproapp
+=======
+    image: vprocontainers/vprofileapp
+>>>>>>> 0bae73ccef699cb1e4c1fa705275d40fdc768c02:compose/docker-compose.yml
     ports:
       -"8080:8080"
     volumes:
       - vproappdata:/usr/local/tomcat/webapps
     
   vproweb:
+<<<<<<< HEAD:docker-compose.yml
     build:
       context: Docker-files/web
     image: akshayasp/vprofileweb
     container_name: vproweb
+=======
+    image: vprocontainers/vprofileweb
+>>>>>>> 0bae73ccef699cb1e4c1fa705275d40fdc768c02:compose/docker-compose.yml
     ports:
       -"80:80"
     
